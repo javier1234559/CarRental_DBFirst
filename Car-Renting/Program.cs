@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Car_Renting
+namespace CarRental_DBFirst
 {
     internal static class Program
     {

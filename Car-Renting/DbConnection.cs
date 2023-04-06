@@ -7,13 +7,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Car_Renting
+namespace CarRental_DBFirst
 {
     class DbConnection
     {
         private static DbConnection instance;
         //private static string connectionString = Properties.Settings.Default.connStr ;
-        private static string connectionString = "Data Source=(localdb)\\mssqllocaldb;Initial Catalog=QLThueXe;Integrated Security=True";
+        private static string connectionString = "Data Source=(localdb)\\mssqllocaldb;Initial Catalog=QLThueXe_DBEntity;Integrated Security=True";
         private static SqlConnection conn = new SqlConnection(connectionString);
 
 

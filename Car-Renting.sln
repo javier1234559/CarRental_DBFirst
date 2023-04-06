@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Car-Renting", "Car-Renting\Car-Renting.csproj", "{6C7DBF95-ACD5-4E29-AA8B-A856AFA6E6D0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarRental_DBFirst", "Car-Renting\CarRental_DBFirst.csproj", "{6C7DBF95-ACD5-4E29-AA8B-A856AFA6E6D0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

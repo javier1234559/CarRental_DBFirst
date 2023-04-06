@@ -1,5 +1,5 @@
-﻿using Car_Renting;
-using Car_Renting.DAO;
+﻿using CarRental_DBFirst;
+using CarRental_DBFirst.DAO;
 using System;
 using System.Collections.Generic;
 using System.Data;

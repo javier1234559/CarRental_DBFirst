@@ -1,4 +1,4 @@
-﻿using Car_Renting.DAO;
+﻿using CarRental_DBFirst.DAO;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Car_Renting
+namespace CarRental_DBFirst
 {
     class RentDAO : IBaseDAO<Rent>
     {

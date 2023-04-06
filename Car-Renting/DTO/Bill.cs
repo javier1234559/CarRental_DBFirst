@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Car_Renting
+namespace CarRental_DBFirst
 {
     public class Bill
     {

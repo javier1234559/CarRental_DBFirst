@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Car_Renting.Properties {
+namespace CarRental_DBFirst.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]

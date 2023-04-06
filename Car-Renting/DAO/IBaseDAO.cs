@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Car_Renting.DAO
+namespace CarRental_DBFirst.DAO
 {
     public interface IBaseDAO <T>
     {

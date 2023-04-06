@@ -4,22 +4,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Car_Renting
+namespace CarRental_DBFirst
 {
     public class Rent
     {
         public int RentId { get; set; }
         public int ClientId { get; set; }
         public int CarId { get; set; }
+        public bool HoldingCCCD { get; set; }
         public DateTime DateStart { get; set; }
         public DateTime DateEnd { get; set; }
-        public string DescriptionRent { get; set; }
-
-        public int DateDelayQuantity { get; set; }
         public string State { get; set; }
-        public bool HoldingCCCD { get; set; }
-        public int Deposit { get; set; }
         public int EstimatedCost { get; set; }
+        public string DescriptionRent { get; set; } 
+        public int DateDelayQuantity { get; set; }
+        public int Deposit { get; set; }
         public string CancellationReason { get; set; }
 
       
