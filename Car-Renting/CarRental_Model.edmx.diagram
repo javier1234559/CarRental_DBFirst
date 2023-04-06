@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b6a1ae92285342df9bcbe556e0d690ec" Name="Diagram1" ZoomLevel="65">
+        <EntityTypeShape EntityType="QLThueXe_DBEntityModel.Account" Width="1.5" PointX="8.25" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLThueXe_DBEntityModel.Bill" Width="1.5" PointX="8.25" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLThueXe_DBEntityModel.Car" Width="1.5" PointX="0.75" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLThueXe_DBEntityModel.Client" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLThueXe_DBEntityModel.Rating" Width="1.5" PointX="3" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLThueXe_DBEntityModel.Rent" Width="1.5" PointX="6" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLThueXe_DBEntityModel.User" Width="1.5" PointX="6" PointY="0.875" IsExpanded="true" />
+        <AssociationConnector Association="QLThueXe_DBEntityModel.FK__Account__IdUser__276EDEB3" ManuallyRouted="false" />
+        <AssociationConnector Association="QLThueXe_DBEntityModel.FK__Bills__IdUser__35BCFE0A" ManuallyRouted="false" />
+        <AssociationConnector Association="QLThueXe_DBEntityModel.FK__Bills__RentId__34C8D9D1" ManuallyRouted="false" />
+        <AssociationConnector Association="QLThueXe_DBEntityModel.FK__Rating__CarId__3A81B327" ManuallyRouted="false" />
+        <AssociationConnector Association="QLThueXe_DBEntityModel.FK__Rents__CarId__30F848ED" ManuallyRouted="false" />
+        <AssociationConnector Association="QLThueXe_DBEntityModel.FK__Rating__ClientId__398D8EEE" ManuallyRouted="false" />
+        <AssociationConnector Association="QLThueXe_DBEntityModel.FK__Rents__ClientId__31EC6D26" ManuallyRouted="false" />
+        <AssociationConnector Association="QLThueXe_DBEntityModel.FK__Rating__RentId__38996AB5" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,5 +1,4 @@
 ﻿using iText.IO.Image;
-using iText.Kernel.Font;
 using iText.Kernel.Geom;
 using iText.Kernel.Pdf;
 using iText.Kernel.Pdf.Canvas.Draw;
@@ -31,7 +30,7 @@ namespace CarRental_DBFirst
             return Instance;
         }
 
-        public void GeneratePDFRent(string pdfPath, Rent rent)
+        public void GeneratePDFRent(string pdfPath, Rent rent , Car car , Client client , User user)
         {
             if (String.IsNullOrEmpty(pdfPath)) return ;
 
@@ -54,26 +53,58 @@ namespace CarRental_DBFirst
             string imagePath = @"./Resources/HeroContactCarRental.jpg";
             string filePath = System.IO.Path.Combine(projectPath, imagePath);
             Image image = new Image(ImageDataFactory.Create(filePath))
-                                                    .SetHeight(200)
-                                                    .SetMarginTop(20)
-                                                    ;
-            //.SetTextAlignment(TextAlignment.CENTER)
+                                                    .Scale(1, 0.5f)
+                                                    .SetMarginTop(20).SetAutoScaleWidth(true)
+                                                    .SetTextAlignment(TextAlignment.CENTER);
 
             document.Add(header);
             document.Add(subheader);
             document.Add(ls);
-            document.Add(image).SetTextAlignment(TextAlignment.CENTER);
+            document.Add(image);
 
-            //PropertyInfo[] properties = typeof(Rent).GetProperties();
-            //foreach (PropertyInfo property in properties)
-            //{
-            //    Paragraph para = new Paragraph()
-            //                    .Add(new Text(property.Name + ": ").SetBold())
-            //                    .Add(new Text(property?.GetValue(rent)?.ToString()).SetFontSize(12))
-            //                    .SetTextAlignment(TextAlignment.LEFT);
-            //    document.Add(para);
-            //}
+            // create a new Paragraph
+            Paragraph content = new Paragraph();
 
+
+            // add the value of the User object's Name property to the Paragraph
+            if (user != null)
+            {
+                content.Add(new Text("Invoice Generation Staff : ").SetBold());
+                content.Add(new Text(user.Name + "\n"));
+            }
+
+            // add the values of the Client object to the Paragraph
+            foreach (var property in client.GetType().GetProperties())
+            {
+                if (!property.Name.Contains("Id"))
+                {
+                    content.Add(new Text(property.Name + ": ").SetBold());
+                    content.Add(new Text(property.GetValue(client, null)?.ToString() + "\n"));
+                }
+            }
+
+            // add the values of the Car object to the Paragraph
+            foreach (var property in car.GetType().GetProperties())
+            {
+                if (property.Name.Contains("Id") == false && property.Name.Contains("ImageCar") == false )
+                {
+                    content.Add(new Text(property.Name + ": ").SetBold());
+                    content.Add(new Text(property.GetValue(car, null)?.ToString() + "\n"));
+                }
+            }
+
+            // add the values of the Rent object to the Paragraph
+            foreach (var property in rent.GetType().GetProperties())
+            {
+                if (!property.Name.Contains("Id"))
+                {
+                    content.Add(new Text(property.Name + ": ").SetBold());
+                    content.Add(new Text(property.GetValue(rent, null)?.ToString() + "\n"));
+                }
+            }
+
+            // add the content Paragraph to the document
+            document.Add(content);
             document.Close();
             pdfDoc.Close();
         }

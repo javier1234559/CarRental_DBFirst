@@ -14,6 +14,7 @@ namespace CarRental_DBFirst
     public partial class fLogin : Form
     {
         AccountDAO accountdao = new AccountDAO();
+        UserDAO userdao = new UserDAO();
         Account account;
 
         public fLogin()
@@ -39,6 +40,7 @@ namespace CarRental_DBFirst
             {
                 this.account = temp;
                 Session.currentaccount= this.account;
+                Session.currentuser = userdao.GetById(account.IdUser);
                 fNavigation f = fNavigation.getInstance();
                 this.Hide();
                 f.ShowDialog();
