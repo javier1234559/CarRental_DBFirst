@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CarRental_DBFirst
+namespace Car_Renting
 {
     public static class Session
     {

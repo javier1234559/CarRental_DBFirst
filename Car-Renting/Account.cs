@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Car_Renting
+namespace Car_Renting   
 {
     using System;
     using System.Collections.Generic;

@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CarRental_DBFirst
+namespace Car_Renting
 {
     public partial class fClient : Form
     {
@@ -37,7 +37,8 @@ namespace CarRental_DBFirst
             {
                 DataGridViewRow row = gvClients.Rows[e.RowIndex];
                 //Load data to modal car
-                int idclient = (int)row.Cells["ClientId"].Value;
+                if (!Int32.TryParse(row.Cells["ClientId"].Value.ToString(), out int idclient))
+                    return;
                 this.client = clientdao.GetById(idclient);
 
                 //Load data to textbox
@@ -65,8 +66,12 @@ namespace CarRental_DBFirst
                 string cmnd = txtCmnd.Text;
                 string email = txtEmail.Text;
                 string license = txtLicence.Text;
-                Client newClient = new Client( name, phone, cmnd, email, license);
-                
+                Client newClient = new Client();
+                newClient.Name = name;
+                newClient.Email = email;
+                newClient.CCCD = cmnd;
+                newClient.License = license;
+
                 clientdao.Insert(newClient);
             }
 
@@ -80,15 +85,22 @@ namespace CarRental_DBFirst
             string cmnd = txtCmnd.Text;
             string email = txtEmail.Text;
             string license = txtLicence.Text;
-            Client updatedClient = new Client(id, name, phone, cmnd, email, license);
-
-            if(clientdao.Update(updatedClient) != 0)
+            Client newClient = new Client();
+            newClient.ClientId = id;
+            newClient.Name = name;
+            newClient.Phone = phone;
+            newClient.Email = email;
+            newClient.CCCD = cmnd;
+            newClient.License = license;
+            //Client updatedClient = new Client(id, name, phone, cmnd, email, license);
+            
+            if (clientdao.Update(newClient) != 0)
             {
-                MessageBox.Show("Cập nhật thành công !");
+                MessageBox.Show("cập nhật thành công !");
             }
             else
             {
-                MessageBox.Show("Cập nhật thất bại !");
+                MessageBox.Show("cập nhật thất bại !");
             }
 
         }

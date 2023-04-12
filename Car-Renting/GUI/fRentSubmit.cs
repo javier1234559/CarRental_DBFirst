@@ -11,7 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CarRental_DBFirst
+namespace Car_Renting
 {
     public partial class fRentSubmit : Form
     {
@@ -51,8 +51,8 @@ namespace CarRental_DBFirst
             txtLisence.Text = this.client.License;
 
             //fill date
-            datepkbegin.Value = this.rent.DateStart;
-            datepkend.Value = this.rent.DateEnd;
+            //datepkbegin.Value = this.rent.DateStart;
+            //datepkend.Value = this.rent.DateEnd;
             txtdescriptionRent.Text = this.rent.DescriptionRent;
 
         }

@@ -1,4 +1,4 @@
-﻿namespace CarRental_DBFirst
+﻿namespace Car_Renting
 {
     partial class fRentCancel
     {

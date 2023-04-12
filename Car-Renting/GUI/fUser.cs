@@ -1,5 +1,4 @@
-﻿using Account_Renting;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,7 +11,7 @@ using System.Windows;
 using System.Windows.Forms;
 using System.Xml.Linq;
 
-namespace CarRental_DBFirst
+namespace Car_Renting
 {
     public partial class fUser : Form
     {

@@ -141,6 +141,8 @@
     <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.5.0.0\lib\net45\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
     </Reference>
@@ -161,18 +163,42 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Account.cs">
+      <DependentUpon>CarRentalDBFirst.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Bill.cs">
+      <DependentUpon>CarRentalDBFirst.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Car.cs">
+      <DependentUpon>CarRentalDBFirst.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CarRentalDBFirst.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CarRentalDBFirst.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CarRentalDBFirst.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CarRentalDBFirst.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CarRentalDBFirst.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CarRentalDBFirst.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Client.cs">
+      <DependentUpon>CarRentalDBFirst.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAO\CommonDB.cs" />
     <Compile Include="DAO\BillDAO.cs" />
+    <Compile Include="DAO\DbConnection.cs" />
     <Compile Include="DAO\IBaseDAO.cs" />
     <Compile Include="DAO\ClientDAO.cs" />
     <Compile Include="DAO\AccountDAO.cs" />
     <Compile Include="DAO\RentDAO.cs" />
     <Compile Include="DAO\UserDAO.cs" />
-    <Compile Include="DTO\Account.cs" />
-    <Compile Include="DTO\Bill.cs" />
-    <Compile Include="DTO\Client.cs" />
-    <Compile Include="DTO\Car.cs" />
     <Compile Include="DAO\CarDAO.cs" />
-    <Compile Include="DbConnection.cs" />
     <Compile Include="GUI\fBill.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -263,18 +289,24 @@
     <Compile Include="GUI\fRating.Designer.cs">
       <DependentUpon>fRating.cs</DependentUpon>
     </Compile>
+    <Compile Include="Rating.cs">
+      <DependentUpon>CarRentalDBFirst.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Rent.cs">
+      <DependentUpon>CarRentalDBFirst.tt</DependentUpon>
+    </Compile>
+    <Compile Include="User.cs">
+      <DependentUpon>CarRentalDBFirst.tt</DependentUpon>
+    </Compile>
     <Compile Include="Utilites\PDFGenerate.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="DTO\Rating.cs" />
-    <Compile Include="DTO\Rent.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Utilites\Session.cs" />
-    <Compile Include="DTO\User.cs" />
     <EmbeddedResource Include="GUI\fBill.resx">
       <DependentUpon>fBill.cs</DependentUpon>
     </EmbeddedResource>
@@ -325,6 +357,13 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EntityDeploy Include="CarRentalDBFirst.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>CarRentalDBFirst.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="CarRentalDBFirst.edmx.diagram">
+      <DependentUpon>CarRentalDBFirst.edmx</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -359,6 +398,21 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="BUS\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CarRentalDBFirst.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CarRentalDBFirst.edmx</DependentUpon>
+      <LastGenOutput>CarRentalDBFirst.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="CarRentalDBFirst.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CarRentalDBFirst.edmx</DependentUpon>
+      <LastGenOutput>CarRentalDBFirst.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

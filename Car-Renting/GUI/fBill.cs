@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CarRental_DBFirst
+namespace Car_Renting
 {
     public partial class fBill : Form
     {
@@ -53,11 +53,11 @@ namespace CarRental_DBFirst
 
         private void fillmodalBill(int id)
         {
-            this.bill = billDao.GetById(id);
-            this.user =  userDao.GetById(bill.IdUser);
-            this.rent = rentDao.GetById(bill.RentId);
-            this.car = carDao.GetById(rent.CarId);
-            this.client = clientDao.GetById(rent.ClientId);
+            //this.bill = billDao.GetById(id);
+            //this.user =  userDao.GetById(bill.IdUser);
+            //this.rent = rentDao.GetById(bill.RentId);
+            //this.car = carDao.GetById(rent.CarId);
+            //this.client = clientDao.GetById(rent.ClientId);
             updateSession();
         }
 

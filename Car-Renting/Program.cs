@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CarRental_DBFirst
+namespace Car_Renting
 {
     internal static class Program
     {
@@ -16,7 +16,9 @@ namespace CarRental_DBFirst
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new fLogin());
+            //Application.Run(new fLogin());
+            fNavigation f = fNavigation.getInstance();
+            Application.Run(f);
         }
     }
 }

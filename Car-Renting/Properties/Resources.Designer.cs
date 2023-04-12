@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CarRental_DBFirst.Properties {
+namespace Car_Renting.Properties {
     using System;
     
     

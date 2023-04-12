@@ -1,4 +1,4 @@
-﻿namespace CarRental_DBFirst
+﻿namespace Car_Renting
 {
     partial class fNavigation
     {
@@ -214,7 +214,7 @@
             // 
             this.btnLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(50)))), ((int)(((byte)(56)))));
             this.btnLogo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnLogo.Image = global::CarRental_DBFirst.Properties.Resources.Logo;
+            this.btnLogo.Image = global::Car_Renting.Properties.Resources.Logo;
             this.btnLogo.Location = new System.Drawing.Point(0, 0);
             this.btnLogo.Name = "btnLogo";
             this.btnLogo.Size = new System.Drawing.Size(153, 98);

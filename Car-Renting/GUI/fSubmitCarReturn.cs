@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CarRental_DBFirst
+namespace Car_Renting
 {
     public partial class fSubmitCarReturn : Form
     {

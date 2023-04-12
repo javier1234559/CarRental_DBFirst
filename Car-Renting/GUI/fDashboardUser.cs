@@ -1,5 +1,4 @@
-﻿using Account_Renting;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,7 +10,7 @@ using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
 using System.Windows.Markup;
 
-namespace CarRental_DBFirst
+namespace Car_Renting
 {
     public partial class fDashboardUser : Form
     {
@@ -142,7 +141,7 @@ namespace CarRental_DBFirst
                     dataPoint.Label = u.Name;
                     dataPoint.SetValueXY(u.Name, u.TotalRevenue); 
                     series.Points.Add(dataPoint);
-                    total += u.TotalRevenue;
+                    //total += u.TotalRevenue;
                 }
 
                 foreach (DataPoint dataPoint in series.Points)
@@ -217,34 +216,34 @@ namespace CarRental_DBFirst
 
         private void btnAddUser_Click(object sender, EventArgs e)
         {
-            string name = txtName.Text;
-            string phone = txtPhone.Text;
-            string address = txtAddress.Text;
-            string email = txtEmail.Text;
-            string password = txtPassword.Text;
-            int totalRevenue = 0;
+            //string name = txtName.Text;
+            //string phone = txtPhone.Text;
+            //string address = txtAddress.Text;
+            //string email = txtEmail.Text;
+            //string password = txtPassword.Text;
+            //int totalRevenue = 0;
 
-            if (string.IsNullOrEmpty(name) || string.IsNullOrEmpty(phone) || string.IsNullOrEmpty(address) || string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password))
-            {
-                if(phone.Length < 10)
-                {
-                    MessageBox.Show("Vui long nhap du 10 so cua so dien thoai");
-                    return;
-                }
-                if(userDao.GetByPhone(phone) != null) {
-                    MessageBox.Show("Vui Long khong nhap trung thong tin");
-                    return;
-                }
+            //if (string.IsNullOrEmpty(name) || string.IsNullOrEmpty(phone) || string.IsNullOrEmpty(address) || string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password))
+            //{
+            //    if(phone.Length < 10)
+            //    {
+            //        MessageBox.Show("Vui long nhap du 10 so cua so dien thoai");
+            //        return;
+            //    }
+            //    if(userDao.GetByPhone(phone) != null) {
+            //        MessageBox.Show("Vui Long khong nhap trung thong tin");
+            //        return;
+            //    }
 
-                MessageBox.Show("Vui Long nhap thong tin day du");
-                return;
-            }
+            //    MessageBox.Show("Vui Long nhap thong tin day du");
+            //    return;
+            //}
 
-            User newuser = new User(name, phone, address, totalRevenue);
-            int idnewuser = userDao.Insert(newuser);
-            Account newaccount = new Account(email,password,idnewuser);
-            int idnewaccount = accountDao.Insert(newaccount);
-            MessageBox.Show( $"Them thanh cong nhan vien moi : {newuser.Name} !");
+            ////User newuser = new User(name, phone, address, totalRevenue);
+            ////int idnewuser = userDao.Insert(newuser);
+            ////Account newaccount = new Account(email,password,idnewuser);
+            //int idnewaccount = accountDao.Insert(newaccount);
+            //MessageBox.Show( $"Them thanh cong nhan vien moi : {newuser.Name} !");
             loadData();
         }
 

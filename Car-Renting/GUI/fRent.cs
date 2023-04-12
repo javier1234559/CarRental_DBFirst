@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CarRental_DBFirst
+namespace Car_Renting
 {
     public partial class fRent : Form
     {
@@ -63,28 +63,27 @@ namespace CarRental_DBFirst
             string cmnd = txtCMND.Text;
             string email = txtEmail.Text;
             string lisence = txtLicense.Text;
-            Client temp = new Client(name, phone, cmnd, email, lisence);
+            //Client temp = new Client(name, phone, cmnd, email, lisence);
 
-            if (this.clientdao.FindIDClientByCmnd(temp.CCCD) != null)
-            {
-                if (Session.currentclient != null && Session.currentclient.CCCD == temp.CCCD)
-                {
-                    this.client = Session.currentclient;
-                    return false;
-                }
-                else
-                {
-                    MessageBox.Show("Người dùng này đã tồn tại , vui lòng tìm kiếm ở bảng Client");
-                }
+            //if (this.clientdao.FindIDClientByCmnd(temp.CCCD) != null)
+            //{
+            //    if (Session.currentclient != null && Session.currentclient.CCCD == temp.CCCD)
+            //    {
+            //        this.client = Session.currentclient;
+            //        return false;
+            //    }
+            //    else
+            //    {
+            //        MessageBox.Show("Người dùng này đã tồn tại , vui lòng tìm kiếm ở bảng Client");
+            //    }
 
-                return true;
-            }
-            else
-            {
-                this.client = temp;
-                return false;
-            }
-
+            //    return true;
+            //}
+            //else
+            //{
+            //    this.client = temp;
+            return false;
+            //}
         }
 
         private void saveDataToSession()
@@ -96,10 +95,10 @@ namespace CarRental_DBFirst
 
         private void handleSaveRent()
         {
-            DateTime start = datepkbegin.Value;
-            DateTime end = datepkend.Value;
-            string descriptionRent = txtdescriptionRent.Text;
-            this.rent  = new Rent(car.CarId, start, end, descriptionRent);
+            //DateTime start = datepkbegin.Value;
+            //DateTime end = datepkend.Value;
+            //string descriptionRent = txtdescriptionRent.Text;
+            //this.rent  = new Rent(car.CarId, start, end, descriptionRent);
         }
 
         private void btnSubmit_Click(object sender, EventArgs e)

@@ -1,5 +1,4 @@
-﻿using Account_Renting;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CarRental_DBFirst
+namespace Car_Renting
 {
     public partial class fLogin : Form
     {
@@ -27,28 +26,28 @@ namespace CarRental_DBFirst
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            string email = txtLogin.Text.Trim();
-            string pass = txtPassword.Text.Trim();
-            if (email == "" || pass == "")
-            {
-                MessageBox.Show("Vui lòng nhập thông tin");
-                return;
-            }
+            //string email = txtLogin.Text.Trim();
+            //string pass = txtPassword.Text.Trim();
+            //if (email == "" || pass == "")
+            //{
+            //    MessageBox.Show("Vui lòng nhập thông tin");
+            //    return;
+            //}
 
-            Account temp = accountdao.GetByEmailAndPass(email, pass);
-            if (temp != null)
-            {
-                this.account = temp;
-                Session.currentaccount= this.account;
-                Session.currentuser = userdao.GetById(account.IdUser);
-                fNavigation f = fNavigation.getInstance();
-                this.Hide();
-                f.ShowDialog();
-            }
-            else
-            {
-                MessageBox.Show("Dang nhap khong thanh cong. Vui long thu lai.");
-            }
+            //Account temp = accountdao.GetByEmailAndPass(email, pass);
+            //if (temp != null)
+            //{
+            //    this.account = temp;
+            //    Session.currentaccount= this.account;
+            //    Session.currentuser = userdao.GetById(account.IdUser);
+            //    fNavigation f = fNavigation.getInstance();
+            //    this.Hide();
+            //    f.ShowDialog();
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Dang nhap khong thanh cong. Vui long thu lai.");
+            //}
         }
 
         private void btnExit_Click(object sender, EventArgs e)

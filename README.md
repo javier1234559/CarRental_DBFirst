@@ -8,3 +8,5 @@
 
 main
 
+### Lần đầu clone project thì hãy vào Nuget Manager Console update de cai dat cac thu vien bi gitignore
+
