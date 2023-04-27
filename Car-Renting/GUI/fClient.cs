@@ -69,6 +69,7 @@ namespace Car_Renting
                 Client newClient = new Client();
                 newClient.Name = name;
                 newClient.Email = email;
+                newClient.Phone = phone;
                 newClient.CCCD = cmnd;
                 newClient.License = license;
 
@@ -92,7 +93,6 @@ namespace Car_Renting
             newClient.Email = email;
             newClient.CCCD = cmnd;
             newClient.License = license;
-            //Client updatedClient = new Client(id, name, phone, cmnd, email, license);
             
             if (clientdao.Update(newClient) != 0)
             {
@@ -111,11 +111,12 @@ namespace Car_Renting
             string phone = txtPhone.Text;
             string cmnd = txtCmnd.Text;
 
-            if(name == null  && phone == null && cmnd == null )
+            if (String.IsNullOrWhiteSpace(name) || String.IsNullOrWhiteSpace(phone) || String.IsNullOrWhiteSpace(cmnd))
             {
-                MessageBox.Show("Vui long dien day du thong tin ");
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin.");
                 return true;
             }
+
             this.client = this.clientdao.FindIDClientByCmnd(cmnd);
 
             return false;

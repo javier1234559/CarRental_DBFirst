@@ -13,8 +13,9 @@ namespace Car_Renting
 {
     class ClientDAO : IBaseDAO<Client>
     {
-       
-        public DataTable GetAllDataTable() {
+
+        public DataTable GetAllDataTable()
+        {
 
             DataTable result = null;
 
@@ -28,10 +29,10 @@ namespace Car_Renting
 
         public Client GetById(int id)
         {
-            using ( var db  = new QLThueXe_DBEntityEntities1())
+            using (var db = new QLThueXe_DBEntityEntities1())
             {
                 Client client = db.Clients.Find(id);
-                if(client != null)
+                if (client != null)
                     return client;
                 else
                     return null;
@@ -54,9 +55,18 @@ namespace Car_Renting
         {
             using (var db = new QLThueXe_DBEntityEntities1())
             {
-                Client newClient = db.Clients.Add(entity);
-                db.SaveChanges();
-                return newClient.ClientId;
+                try
+                {
+                    Client newClient = db.Clients.Add(entity);
+                    db.SaveChanges();
+                    return newClient.ClientId;
+                }
+                catch(Exception e)
+                {
+                    MessageBox.Show(e.Message);
+                    return 0;
+                }
+
             }
         }
 
@@ -68,15 +78,6 @@ namespace Car_Renting
                 entry.State = EntityState.Modified;
                 db.SaveChanges();
                 return entry.Entity.ClientId;
-                //int id = entity.ClientId;
-                //var result = db.Clients.SingleOrDefault(b => b.ClientId == id );
-                //if (result != null)
-                //{
-                //    result = entity;
-                //    db.SaveChanges();
-                //}
-                //var check = db.Clients.Find(id);
-                //return check == entity ? 1 : 0 ;
             }
         }
 
@@ -84,7 +85,7 @@ namespace Car_Renting
         {
             using (var db = new QLThueXe_DBEntityEntities1())
             {
-                int result = 0; 
+                int result = 0;
                 var clientToDelete = db.Clients.Find(entity.ClientId);
                 if (clientToDelete != null)
                 {
